@@ -10,4 +10,10 @@ class Listing < ActiveRecord::Base
   def s3_credentials
     {:bucket => ENV["directory"], :access_key_id => ENV["aws_access_key_id"], :secret_access_key => ENV["aws_secret_access_key"]}
   end
+
+  validates :name, :description, :price, presence: true
+  validates :price, numericality: { greater_than: 0 }
+  validates_attachment_presence :image
+
+  belongs_to :user
 end
