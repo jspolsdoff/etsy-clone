@@ -41,3 +41,16 @@ body {
     font-size: 18px;
   }
 }
+
+.jumbotron {
+  background-image: url('https://s3.amazonaws.com/kazijams/listings/shc-karolinschnoor.jpg');
+  h1 {
+    color: #ffffff;
+    font-size: 52px;
+    font-family: guardian-egyptt, georgia, serif;
+  }
+  h2 {
+    color: #ffffff;
+    font-family: guardian-egyptt, georgia, serif;
+  }
+}
