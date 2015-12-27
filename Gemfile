@@ -16,6 +16,7 @@ gem "paperclip", "~> 4.3"
 gem 'aws-sdk', '< 2.0'
 gem "figaro"
 gem 'devise'
+gem 'stripe'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
