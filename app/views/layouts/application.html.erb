@@ -4,9 +4,13 @@
   <title>EtsyClone</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'https://js.strip.com/v2/' %>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <% if params[:controller] == "orders" %>
+  	<%= javascript_include_tag params[:controller] %>
+	<% end %>
   <%= csrf_meta_tags %>
-  <%= tag :meta, :name => "stripe-key", :content => ENV["STRIPE_PUBLIC_KEY"] %>
+  <%= tag :meta, :name => "strip-key", :content => ENV['stripe_publishable_key'] %>
+  
 </head>
 <body>
 
@@ -14,9 +18,11 @@
 
 <div class="container">
 	<%= render 'layouts/alert' %>
+	<%= p params[:controller] %>
   <%= yield %>
   <%= render 'layouts/footer' %>
 </div>
+
 
 </body>
 </html>
