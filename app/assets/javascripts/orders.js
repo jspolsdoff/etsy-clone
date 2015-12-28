@@ -18,10 +18,11 @@ payment = {
   handleStripeResponse: function(status, response) {
 	    if (status === 200) {
 	    	$('input[type=submit]').attr('disabled', false);
-	      return alert(response.id);
+	      $('#new_order').append($('<input type="hidden" name="stripeToken" />').val(response.id))
+	      $('#new_order')[0].submit()
 	    } else {
 	    	$('input[type=submit]').attr('disabled', false);
-	      return alert(response.error.message);
+	      $('#stripe_error').text(response.error.message).show();
 	    }
 	  }
 	};
