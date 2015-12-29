@@ -8,6 +8,9 @@
   <% if params[:controller] == "orders" %>
   	<%= javascript_include_tag params[:controller] %>
 	<% end %>
+  <% if params[:controller] == "listings" %>
+    <%= javascript_include_tag params[:controller] %>
+  <% end %>
   <%= csrf_meta_tags %>
   <%= tag :meta, :name => "strip-key", :content => ENV['stripe_publishable_key'] %>
   
